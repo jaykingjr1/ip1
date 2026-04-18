@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<HEAD>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DomainTrusts</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+/* Force layout to fill exact viewport height */
+html, body {
+  color:black;
+  font-family: Arial, Helvetica, FreeSans, sans-serif;
+  font-size: 2.5vw;
+  line-height: 1; 
+  font-weight: normal;
+}
+header {
+  margin: auto;
+}
+section {
+  width: 98vw;
+  margin: 0 auto .5vh auto;
+  background: skyblue;
+}
+h1 {
+  font-size: 4.5vw;
+  text-align: center;
+  font-family: Tahoma, sans-serif;
+  color:#400040;
+  font-weight: normal;
+  line-height: 1; 
+  margin:0 0 2vh 0;
+  padding:0;
+
+	text-align:center;
+	margin:0em 0em 0em 0em;
+	padding:0em 0em 0.1em 0em;
+  text-align: center;
+  margin: 0 0 1vh 1vw;
+  padding: 0;
+  font-family: Verdana, Geneva, serif; /* Thomas change */
+  font-size: 6.5vw;
+  color: white;
+}
+
+h2 {
+  font-size: 3vw;
+  text-align: center;
+  font-family: Tahoma, sans-serif;
+  color:#400040;
+  font-weight: normal;
+  line-height: 1; 
+  margin:0 0 2vh 0;
+  padding:0;
+
+	text-align:center;
+	color:#000f00;
+	font-family:Arial;
+	margin:.5em 0em .5em 0em;
+	padding:0em 0em 0em 0em;
+	font-family:Berkshire Swash;
+	font-family:Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia;
+	font-size:26px;
+	line-height:1.1;
+
+  width: 100%;
+  padding: 0.3vh 0 1.0vh 0;
+  /* Following changed by Thomas */
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 700;
+  color: #0e2a47;
+  background-color: #2fafeb;
+
+}
+h3 {
+  text-align: left;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: skyblue;
+  padding-bottom: 1vh;
+  padding: 0;
+  font-size: clamp(1.125rem,3vw,3.8rem);
+  font-weight: 600;
+  border-bottom: 0.4vw solid #2840a0;
+  border-radius: 0;
+  background: none;
+  display: block;
+  box-shadow: none;
+}
+
+
+h4 {
+	text-align:center;
+	width:60%;
+	color:#660000;color:#002070;color:#001070;color:#101010;color:#660000;
+	font-weight:bold;
+	margin:0em 0em 0em 0em;
+	padding:0em 0em 0em 0em;
+	font-family:Georgia, Times, serif;
+	font-size:20px;
+	font-style:italic;
+  text-align: left;
+  color:#400040;
+  font-family:Arial;
+  font-size:110%;
+  margin:2vh 0 0.5vh 0;
+  padding:0;
+}
+
+h5 {
+	text-align:center;
+	color:#00000F;
+	margin:.01em 0em .1em 0em;
+	padding:.07em 0em .08em 0em;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:20px;
+  text-align: center;
+  margin: 1.5vw 0 0.5vw 0;
+  padding: 0;
+  color: #000080;
+  font-weight: 600;
+}
+h6 {
+	text-align:center;
+	color:white;
+	font-weight:normal;
+	margin:1em 0em 0em 0em;
+	line-height:1.1;
+	font-size:1vw;
+	font-family:Arial;
+  text-align: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  color: white;
+  background-color: blue;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover,
+a:focus {
+  color: navy; /* black text for contrast */
+  background-color: #8EEBEC; /* Blue Lag*/
+}
+.see {
+	width: 100vw;
+	height: 70vh;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+function goBack() {
+	window.history.back();
+}
+function unloadMe() { 
+	newwin = window.open("blank.asp","","width=100, height = 100");
+	firstwindow = window.self;
+	firstwindow.opener = window.self;
+	firstwindow.close();
+	newwin.close();
+} 
+function popUp(loc, ext, size) { 
+	var where = loc + "." + ext;
+	var winname = loc + "win";
+	var features = size + "toolbar=no,directories=no,status=no,scrollbars=yes,resizable=yes,menubar=no,location=no,copyhistory=no";
+  	popwin = open( where, winname, features);
+  		if (popwin.opener==null) popwin.opener=window; 
+		popwin.focus();
+}
+body {
+	line-height:1.2;
+	font-family:Arial, Helvetica, FreeSans, sans-serif;
+	background-color:#000011;
+	font-size:16px;
+	text-align:center;
+	margin:0em 0em 0em 0em;
+	padding:0em 0em 0em 0em;
+	border:1px solid black;
+	/* margin-top:-1em; */
+}
+.header {
+	margin:0em 0em 0em 0em;
+	padding:0em 0em 0em 0em;
+	color:white;
+	text-align:center;
+	width:100%;
+	font-family:Georgia, Times, serif;
+	display:inline-block; /* necessary to prevent h2 bug margin penetrating above header */
+}
+footer {
+  display: grid;
+  color: #ffffff;
+  text-align: center;
+  width: 100%;
+  background-color: blue;
+  margin: 0;
+  border-top: 1vw solid #2fafeb;
+  padding: 0.2vh 0 0.2vh 0;
+}
+section {
+	width:98%;
+	margin:0em 0em 0em 0em;
+	padding:0em .5em 0em .5em;
+}
+textarea {
+	width:100%;
+	height:150px;
+}
+p {
+  min-height: clamp(1.5rem,4.5vw,5rem);
+	text-align:left;
+  margin: 0;
+}
+
+
+img {
+	margin:0em 0em 0em 0em;
+	border:0px;
+	border-top-left-radius:12px;
+	border-top-right-radius:12px;
+	border-bottom-left-radius:12px;
+	border-bottom-right-radius:12px;
+}
+
+a {
+	text-decoration:none;
+}
+.domn {
+	position:absolute;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	font-family:Arial, Helvetica, FreeSans, sans-serif;
+	text-shadow:1px 1px blue;
+	color:white;
+	font-weight:bold;
+	top:14px;
+	left:10vw;
+	font-size: 3.5vw;
+}
+.emla {
+	position:absolute;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	font-family:Arial, Helvetica, FreeSans, sans-serif;
+	text-shadow:1px 1px blue;
+	color:white;
+	left:10vw;
+	font-size: 3.2vw;
+	font-weight:bold;
+	top:68px;
+	left:10vw;
+}
+.mssg {
+	position:absolute;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	font-family:Arial, Helvetica, FreeSans, sans-serif;
+	top: 260px;	
+	color:white;
+	font-weight:bold;
+	font-size:2vw;
+	left:20vw;
+}
+.moto {
+	position:absolute;
+	margin:0;
+	padding:0;
+	font-family:Verdana, Geneva, sans-serif;
+	font-family:Times New Roman;
+	font-family:Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia;
+	text-shadow:1px 1px blue;
+	color:white;
+	font-weight:bold;
+	top:150px;
+	left:20vw;
+	font-size: 5vw;
+}
+.logo {
+	position:absolute;				
+	margin: 0px 0px 0px 0px;    
+	padding: 0px 0px 0px 0px;
+	top: 278px;
+	left:10vw;
+	width:8vw;
+}
+
+</style>
+</HEAD>
+<BODY>
+<header>
+<img id="slideshow" class="see" src="images/28.png" alt="Slideshow">
+</header>
+
+	
+
+<body>
+
+
+
+
+
+<footer>
+<h6>
+	&#169; DomainTrusts.com 2026    
+</footer>
+<div class="moto">Trust - Security - Reliability</div>
+<div class="domn">DomainTrusts.com</div>
+<div class="emla">jaykingjr@domaintrusts.com</div>
+<div class="mssg"><br>Free Domain Name<br>Free Static Website<br>Low Hosting Fees</div>
+<img class="logo" alt="logo photo" src="images/logoDT.png">
+<script>
+
+const imgElement = document.getElementById('slideshow');
+const images = [
+    "images/01.png",
+    "images/02.png",
+    "images/03.png",
+    "images/04.png",
+    "images/05.png",
+    "images/06.png",
+    "images/07.png",
+    "images/08.png",
+    "images/09.png",
+    "images/10.png",
+    "images/11.png",
+    "images/12.png",
+    "images/13.png",
+    "images/14.png",
+    "images/15.png",
+    "images/16.png",
+    "images/17.png",
+    "images/18.png",
+    "images/19.png",
+    "images/20.png",
+    "images/21.png",
+    "images/22.png",
+    "images/23.png",
+    "images/24.png",
+    "images/25.png",
+    "images/26.png",
+    "images/27.png",
+    "images/28.png"
+];
+let index = 0;
+function changeImage() {
+    // Update the image source to the current index in the array
+    imgElement.src = images[index];
+
+    // Increment the index for the next image
+    index++;
+
+    // Reset the index to 0 if it exceeds the array length, creating a loop
+    if (index === images.length) {
+        index = 0;
+    }
+}
+// Note: In the function every 1000 milliseconds (1.0 second)
+setInterval(changeImage, 7000);
+</script>
+
+</body>
+</html>
+
+
+</html>
