@@ -191,12 +191,6 @@ a{
 	margin:0em;
 }
 
-caption {
-	font-family: Verdana, sans-serif; 
-    font-weight: bold;
-	font-size: 1.2em; 
-	padding-bottom: 5px; 
-}
 .video-container {
     position: relative;
     padding-top: 56.25%;
@@ -304,13 +298,11 @@ input[readonly]:hover {
   border: none;
   box-shadow: none;
 }
-input[type="checkbox"] {
-
+input[type="checkbox"],
+input[type="radio"] {
     background-color: #fff;
-
     width: 2vw;
     height: 2vw;
-
 }
 h1 {
   /* Centers text horizontally within grid cell */
