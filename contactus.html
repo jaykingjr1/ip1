@@ -26,6 +26,20 @@
 <a class="btn1" href="distros.html">Distros</a>
 </nav>
 <main>
+<p>There exist two meme per page.</p>
+  <form id="meme">
+  <input type="radio" id="m1" name="meme" value="m1">
+  <label for="m1">Some had humor and is appealing</label>
+  <br>
+  <input type="radio" id="m2" name="meme" value="m2">
+  <label for=”m2">They were not persuasive.</label>
+  <br>
+  <input type="radio" id="m3" name="meme" value="m3">
+  <label for="m3">Did not see any.</label>
+  <br>
+  <input class = "btn2" type="submit" value="Submit">
+</form>
+
 <h2>Contact Us</h2>
 <p>Required fields are marked with an asterisk *</p>
 <form id = "contactForm" method="post" action="http://domaintrusts.com/contactus.php">
@@ -64,6 +78,18 @@ placeholder="* Enter required text here..." ></textarea></p>
 <br><br>
 </body>
 <script>
+ocument.getElementById('meme').addEventListener('submit', function(event) {
+    // 1. Find the selected radio button within the "meme" group
+    const selectedMeme = document.querySelector('input[name="meme"]:checked');
+    if (selectedMeme) {
+      // 2. Send the event to Google Analytics
+      gtag('event', 'meme_selection', {
+        'selection_id': selectedMeme.id,      // e.g., "m1"
+        'selection_value': selectedMeme.value // e.g., "m1"
+      });
+    }
+  });
+  
   document.getElementById("contactForm").addEventListener("submit", function () {
       gtag("event", "form_submit", {
         event_category: "engagement",
