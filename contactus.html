@@ -28,7 +28,7 @@
 <main>
 <h2>Contact Us</h2>
 <p>Required fields are marked with an asterisk *</p>
-<form method="post" action="http://domaintrusts.com/contactus.php">
+<form id = "contactForm" method="post" action="http://domaintrusts.com/contactus.php">
 <p class="pform">
 <label for="uFName">* First Name:</label>
 <input type="text" size="30" name="uFName" id="uFName" required="required">
@@ -63,4 +63,13 @@ placeholder="* Enter required text here..." ></textarea></p>
 </footer>
 <br><br>
 </body>
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function () {
+      gtag("event", "form_submit", {
+        event_category: "engagement",
+        event_label: "contact_form"
+      });
+    });
+</script>
+</script>
 </html>
