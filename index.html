@@ -62,20 +62,44 @@ Includes backing up old data, installing custom software, testing hardware (prin
 <form action="survey.html" method="get">
 <p>
 Check all that applies
-<br>
-<input type="checkbox">
+<input type="checkbox" id="s1" 
+       onchange="gtag('event', 'checkbox_toggle', {
+         'event_category': 'form_interaction',
+         'event_label': this.id,
+         'value': this.checked ? 1 : 0
+       });">
 I have a computer running Windows 11.
 <br><br>
-<input type="checkbox">
+<input type="checkbox" id="s2" 
+       onchange="gtag('event', 'checkbox_toggle', {
+         'event_category': 'form_interaction',
+         'event_label': this.id,
+         'value': this.checked ? 1 : 0
+       });">
 I have a computer running Windows 10 and needs to be upgraded.
 <br><br>
-<input type="checkbox">
+<input type="checkbox" id="s3" 
+       onchange="gtag('event', 'checkbox_toggle', {
+         'event_category': 'form_interaction',
+         'event_label': this.id,
+         'value': this.checked ? 1 : 0
+       });">
 I have a computer running MacOs.
 <br><br>
-<input type="checkbox">
+<input type="checkbox" id="s4" 
+       onchange="gtag('event', 'checkbox_toggle', {
+         'event_category': 'form_interaction',
+         'event_label': this.id,
+         'value': this.checked ? 1 : 0
+       });">
 I have a computer running Linux.
 <br><br>
-<input type="checkbox">
+<input type="checkbox" id="s5" 
+       onchange="gtag('event', 'checkbox_toggle', {
+         'event_category': 'form_interaction',
+         'event_label': this.id,
+         'value': this.checked ? 1 : 0
+       });">
 I would like linux installed on a computer.
 </p>
 <br><br>
