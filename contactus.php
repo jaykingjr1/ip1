@@ -7,13 +7,14 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-62B5T1CGLJ');
+
+  gtag('config', 'G-K36B9WE77T');
 </script>
 <link rel="stylesheet" type="text/css" href="css/styleAC.css">
 <link rel="icon" href="images/favicon.png" type="image/png">
 <meta charset="utf-8">
 <meta name=viewport content="width=device-width, initial-scale=1.0">
-<title>Contact Us Response</title>
+<title>Contact Response</title>
 </head>
 <body>
 <header class="header">
