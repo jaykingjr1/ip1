@@ -21,21 +21,16 @@
 <header class="header">
 <img alt="header2" src="images/header2.png">
 </header>
-
 <?php
 $file = 'data/contact.log';
-
 // define variables and set to empty values
 $uLName = $uFName = $uEmail = $uComment = $msg1 = "";
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $uFName = clean_input($_POST["uFName"]);
   $uLName = clean_input($_POST["uLName"]);
   $uEmail = clean_input($_POST["uEmail"]);
   $uComment = clean_input($_POST["uComment"]); 
 }
-
 $data = date('Y-m-d H:i:s')
 	. ","
 	.$uFName
@@ -46,10 +41,7 @@ $data = date('Y-m-d H:i:s')
 	. ","
 	.$uComment
 	. PHP_EOL;
-
-
 // Append the data to the file
-
 $result = file_put_contents($file, $data, FILE_APPEND | LOCK_EX);
 
 if ($result === false) {
@@ -57,8 +49,6 @@ if ($result === false) {
 } else {
     $msg1 = "Text sent Successfully.";
 }
-
-
 // function to clean data
 function clean_input($data) {
   $data = trim($data);
